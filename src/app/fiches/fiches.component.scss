@@ -1,0 +1,39 @@
+.mat-form-field{
+    display: flex;
+    width: 100%;
+    
+}
+
+
+.mb-3{
+    display: flex;
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    background: #eeebeb;
+    font-family: Roboto;
+
+}
+.form-group{
+    display: flex;
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    background: #eeebeb;
+    font-family: Roboto;
+    font-size: 2rem;
+
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 8px;
+}

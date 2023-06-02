@@ -1,0 +1,152 @@
+    <form [formGroup]="Empregister" (ngSubmit)="HandleSubmit()">
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="Basicform">
+    <div formGroupName="basic">
+      <ng-template matStepLabel>Coordonnées</ng-template>
+    
+
+
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Encadrant</mat-label>
+        <input matInput placeholder="encadrant" formControlName="Encadrant" >
+      </mat-form-field>
+      <mat-form-field [style.width.%]="50" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder=" Last name" formControlName="lastname" >
+      </mat-form-field>
+      <mat-form-field [style.width.%]="50" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder=" First name" formControlName="firstname" >
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Tel</mat-label>
+        <input matInput formControlName="tel" placeholder="Tel"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Représenté</mat-label>
+        <input matInput placeholder="représenté" formControlName="Représenté" >
+      </mat-form-field>
+      <mat-form-field [style.width.%]="50" appearance="fill">
+        <mat-label>Tel</mat-label>
+        <input matInput placeholder="tel" formControlName="Tel" >
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email"
+               required>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </div>
+  </mat-step>
+
+  
+  <mat-step [stepControl]="contactform" label="PLus d'info">
+    <div formGroupName="contact">
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Encadrant de l'ENSIAS</mat-label>
+        <input matInput formControlName="encadrant de l'ENSIAS" placeholder="Encadrant de l'ENSIAS"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" placeholder="Phone"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Fax</mat-label>
+        <input matInput formControlName="fax" placeholder="Fax"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Hi</mat-label>
+        <input matInput formControlName="hi" placeholder="Hi"
+               required>
+      </mat-form-field>
+      
+
+      <label [style.width.%]="100" id="example-radio-group-label">Possibilité de Réstauration</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="possibiliteDeRestauration">
+  <mat-radio-button class="example-radio-button" *ngFor="let restauration of restauration" [value]="restauration">
+    {{restauration}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>{{possibiliteDeRestauration}}</div>
+
+<label [style.width.%]="100" id="example-radio-group-label">Possibilité d'Hébergement</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="possibiliteHebergement">
+  <mat-radio-button class="example-radio-button" *ngFor="let hebergement of hebergement" [value]="hebergement">
+    {{hebergement}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>{{possibiliteHebergement}}</div>
+
+<label [style.width.%]="100" id="example-radio-group-label">Possibilité d'Indemnisation</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="possibiliteIndemnisation">
+  <mat-radio-button class="example-radio-button" *ngFor="let Indemnisation of Indemnisation" [value]="Indemnisation">
+    {{Indemnisation}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>{{possibiliteIndemnisation}}</div>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </mat-step>
+  <mat-step [stepControl]="addressform" label="Description du projet">
+    <div formGroupName="address">
+        
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Date de début</mat-label>
+        <input type="date" matInput formControlName="date de début" placeholder="Date de début"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Date de fin</mat-label>
+        <input type="date" matInput formControlName="date de fin" placeholder="Date de fin"
+               required>
+      </mat-form-field>
+      <mat-form-field [style.width.%]="100" appearance="fill">
+        <mat-label>Durée du projet</mat-label>
+        <input  matInput formControlName="durée du projet" placeholder="Durée du projet"
+               required>
+      </mat-form-field>
+      
+
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="accent" matStepperNext>Submit</button>
+      </div>
+    </div>
+  </mat-step>
+  
+</mat-stepper>
+</form>
